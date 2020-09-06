@@ -1,16 +1,8 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import MainContent from "./components/MainContent";
-import Footer from "./components/Footer";
+import Checklist from "./components/Checklist";
 
 function App() {
-  return (
-    <div>
-      <Navbar />
-      <MainContent />
-      <Footer />
-    </div>
-  );
+  return <Checklist />;
 }
 
 export default App;
