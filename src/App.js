@@ -1,35 +1,20 @@
 import React from "react";
-import ContactCard from "./components/ContactCard";
+import Joke from "./components/Joke";
 
 function App() {
   return (
-    <div className="contacts">
-      <ContactCard
-        imageUrl="http://placekitten.com/300/200"
-        name="Mr. Whiskerson"
-        phone="(+46) 788104813"
-        email="mail1@gmail.com"
+    <div>
+      <header className="header">Jokes</header>
+      <Joke
+        question="What's the best thing about Switzerland?"
+        answer="I don't know, but the flag is a big plus."
       />
-
-      <ContactCard
-        imageUrl="http://placekitten.com/400/200"
-        name="Fluffy"
-        phone="(+46) 818417402"
-        email="mail2@gmail.com"
-      />
-
-      <ContactCard
-        imageUrl="http://placekitten.com/400/300"
-        name="Felix"
-        phone="(+46) 847104185"
-        email="mail3@gmail.com"
-      />
-
-      <ContactCard
-        imageUrl="http://placekitten.com/200/100"
-        name="Rex"
-        phone="(+46) 573071954"
-        email="mail4@gmail.com"
+      <Joke question="I invented a new word!" answer="Plagiarism!" />
+      <Joke answer="Did you hear about the semi-colon that broke the law? He was given two consecutive sentences." />
+      <Joke answer="I got my daughter a fridge for her birthday. I can't wait to see her face light up when she opens it." />
+      <Joke
+        question="What do you get from a pampered cow?"
+        answer="Spoiled milk"
       />
     </div>
   );
