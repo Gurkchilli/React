@@ -1,24 +1,37 @@
 import React, { Component } from "react";
 
-// Given a stateless functional component, add state to it
-// state should have a property called `isLoggedIn` which is a boolean
-// (true if logged in, false if not)
-// Then, give your best shot at rendering the word "in" if the user is logged in
-// or "out" if the user is logged out.
-
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      isLoggedIn: false,
+      count: 0,
     };
+    this.handleClickInc = this.handleClickInc.bind(this);
+    this.handleClickDouble = this.handleClickDouble.bind(this);
+  }
+
+  handleClickInc() {
+    this.setState((prevState) => {
+      return {
+        count: prevState.count + 1,
+      };
+    });
+  }
+
+  handleClickDouble() {
+    this.setState((prevState) => {
+      return {
+        count: prevState.count * 2,
+      };
+    });
   }
 
   render() {
-    let loggedIn = this.state.isLoggedIn ? "in" : "out";
     return (
       <div>
-        <h1>You are currently logged {loggedIn}</h1>
+        <h1>{this.state.count}</h1>
+        <button onClick={this.handleClickInc}>Plus One</button>
+        <button onClick={this.handleClickDouble}>Double</button>
       </div>
     );
   }
