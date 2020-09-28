@@ -6,7 +6,8 @@ function TodoItem(props) {
       <input
         type="checkbox"
         name="checkbox"
-        defaultChecked={props.prop.completed && "checked"}
+        checked={props.prop.completed}
+        onChange={() => console.log("Clicked checkbox")}
         className="checkbox"
       ></input>
       <label htmlFor="checkbox">{props.prop.text}</label>
