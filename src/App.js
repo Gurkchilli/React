@@ -28,11 +28,21 @@ class App extends Component {
     // Update state so that the item with the given id flips `completed` from false to true (or vise versa)
     // Remember not to modify prevState directly, but instead to return a new version
     // of state with the change you want included in that update. (Think how you might use the `.map` method to do this)
+    // console.log(todosData[id - 1]);
+    this.setState((prevState) => {
+      var newstate = !prevState.todos[id - 1].completed;
+      const todoItem = this.state.todos.map((todo) => {
+        if (todo.id == id) {
+          todo.completed = newstate;
+        }
+      });
+      return { todoItem };
+    });
   }
 
   render() {
     const todoItem = this.state.todos.map((todo) => (
-      <TodoItem key={todo.id} prop={todo} />
+      <TodoItem key={todo.id} prop={todo} handleChange={this.handleChange} />
     ));
 
     return <div className="todo-list">{todoItem}</div>;
