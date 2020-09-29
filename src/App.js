@@ -32,9 +32,10 @@ class App extends Component {
     this.setState((prevState) => {
       var newstate = !prevState.todos[id - 1].completed;
       const todoItem = this.state.todos.map((todo) => {
-        if (todo.id == id) {
+        if (todo.id === id) {
           todo.completed = newstate;
         }
+        return { todo };
       });
       return { todoItem };
     });
