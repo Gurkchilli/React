@@ -4,24 +4,15 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      count: 0,
+      isLoggedIn: false,
     };
-    this.handleClickInc = this.handleClickInc.bind(this);
-    this.handleClickDouble = this.handleClickDouble.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClickInc() {
+  handleClick() {
     this.setState((prevState) => {
       return {
-        count: prevState.count + 1,
-      };
-    });
-  }
-
-  handleClickDouble() {
-    this.setState((prevState) => {
-      return {
-        count: prevState.count * 2,
+        isLoggedIn: !prevState.isLoggedIn,
       };
     });
   }
@@ -29,9 +20,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>{this.state.count}</h1>
-        <button onClick={this.handleClickInc}>Plus One</button>
-        <button onClick={this.handleClickDouble}>Double</button>
+        <h1>You are logged {this.state.isLoggedIn ? "in" : "out"}</h1>
+        <button onClick={this.handleClick}>
+          Log {this.state.isLoggedIn ? "Out" : "In"}
+        </button>
       </div>
     );
   }
