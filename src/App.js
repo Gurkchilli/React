@@ -48,10 +48,8 @@ class App extends Component {
       } else {
         this.setState((prevState) => {
           const index = prevState.diet.indexOf(value);
-          //console.log(prevState.diet.length);
-          console.log(index);
-          const diet = prevState.diet.splice(index, 1);
-          return { diet };
+          prevState.diet.splice(index, 1);
+          return { diet: prevState.diet };
         });
       }
     } else {
