@@ -42,12 +42,14 @@ class App extends Component {
       //Handles the list of clicked checkboxes
       if (checked) {
         this.setState((prevState) => {
-          const diet = prevState.diet.concat([value]);
+          const diet = prevState.diet.concat(value);
           return { diet };
         });
       } else {
         this.setState((prevState) => {
-          const index = prevState.diet.indexOf([value]);
+          const index = prevState.diet.indexOf(value);
+          //console.log(prevState.diet.length);
+          console.log(index);
           const diet = prevState.diet.splice(index, 1);
           return { diet };
         });
