@@ -1,3 +1,4 @@
+/*
 html,
 div {
   display: flex;
@@ -10,17 +11,23 @@ h1 {
   font-size: 3em;
 }
 
+
+
 button {
   border: 1px solid lightgray;
   background-color: transparent;
-  padding: 10px;
+  height: 50px;
+  Width: 50px;
   border-radius: 4px;
 }
 
+
 button:hover {
+  border: 1px solid gray;
   cursor: pointer;
 }
 
 button:focus {
   outline: 0;
 }
+*/
